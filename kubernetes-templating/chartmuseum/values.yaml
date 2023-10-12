@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt"
+  hosts:
+    - name: chartmuseum.51.250.70.204.sslip.io
+      path: /
+      tls: true
+      tlsSecret: chartmuseum.51.250.70.204.sslip.io
+env:
+  open:
+    DISABLE_API: false
