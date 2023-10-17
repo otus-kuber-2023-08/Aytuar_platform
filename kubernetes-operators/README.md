@@ -1,10 +1,16 @@
+
+```bash
 kubectl apply -f deploy/crd.yaml
 kubectl apply -f deploy/cr.yml
+```
 
+```bash
 kubectl get mysqls.otus.homework
 NAME             AGE
-mysql-instance   5m31s
+mysql-instance   1m31s
+```
 
+```bash
 kubectl describe mysqls.otus.homework mysql-instance
 Name:         mysql-instance
 Namespace:    default
@@ -40,9 +46,9 @@ Spec:
   Password:      otuspassword-new
   storage_size:  1Gi
 Events:          <none>
+```
 
-
-
+```bash
 kubectl describe po mysql-operator-757cc7584c-nc5p2
 Name:         mysql-operator-757cc7584c-nc5p2
 Namespace:    default
@@ -113,3 +119,4 @@ Events:
   Normal  Pulled     27s   kubelet            Container image "container-registry.oracle.com/mysql/community-operator:8.1.0-2.1.0" already present on machine
   Normal  Created    27s   kubelet            Created container mysql-operator
   Normal  Started    27s   kubelet            Started container mysql-operator
+```
